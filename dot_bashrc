@@ -1,0 +1,43 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
+  PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+  for rc in ~/.bashrc.d/*; do
+    if [ -f "$rc" ]; then
+      . "$rc"
+    fi
+  done
+fi
+unset rc
+
+# Defining of prompt starts from here
+
+export PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+. "$HOME/.cargo/env"
+
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/takuya.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/stelbent-compact.minimal.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/atomic.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/hunk.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/1_shell.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/wopian.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/tokyo.omp.json)"
+# eval "$(oh-my-posh init bash --config ~/.cache/oh-my-posh/themes/star.omp.json)"
+export EDITOR=nvim
+export VISUAL=nvim
+export TERMINAL=kitty
+export PATH=$PATH:/usr/local/go/bin
