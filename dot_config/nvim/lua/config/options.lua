@@ -20,3 +20,20 @@ vim.lsp.inlay_hint.enable(false) -- Disable inline diagnostics.
 -- Setting to activarte deep-ocean material theme.
 vim.g.material_style = "deep ocean" --Setting desired style
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions" --for auto-session.
+
+--Inserting configuration for terminal mode
+-- Auto command to enter terminal mode when entering a terminal buffer
+function _G.check_terminal()
+  if vim.bo.buftype == "terminal" then
+    vim.cmd("startinsert")
+  end
+end
+vim.cmd("autocmd BufEnter * lua check_terminal()")
+-- close number if buffertype is terminal.
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+})
