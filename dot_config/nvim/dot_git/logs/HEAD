@@ -1,6 +1,0 @@
-0000000000000000000000000000000000000000 74644ffed2df39b5c0bfeac218f767d58ea1d5eb bhaumik-tripathi <bhaumik2386@gmail.com> 1728663114 +0530	commit (initial): first commit
-74644ffed2df39b5c0bfeac218f767d58ea1d5eb 7bf3c7c521633007bedd39a7c7891f309fc08ad4 bhaumik-tripathi <bhaumik2386@gmail.com> 1728705325 +0530	commit: changed colorscheme
-7bf3c7c521633007bedd39a7c7891f309fc08ad4 c93fb5260e413e8d63725a0250a8e7dc31453642 bhaumik-tripathi <bhaumik2386@gmail.com> 1728745004 +0530	commit: Made almost similar to base installation
-c93fb5260e413e8d63725a0250a8e7dc31453642 0000000000000000000000000000000000000000 bhaumik-tripathi <bhaumik2386@gmail.com> 1728745060 +0530	Branch: renamed refs/heads/main to refs/heads/main
-c93fb5260e413e8d63725a0250a8e7dc31453642 c93fb5260e413e8d63725a0250a8e7dc31453642 bhaumik-tripathi <bhaumik2386@gmail.com> 1728745060 +0530	Branch: renamed refs/heads/main to refs/heads/main
-c93fb5260e413e8d63725a0250a8e7dc31453642 a66167249ae8f311713e6e3d2813f5c122076ff8 bhaumik-tripathi <bhaumik2386@gmail.com> 1728825212 +0530	commit: Fixed inline suggestions
