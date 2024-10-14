@@ -30,7 +30,9 @@ return {
             key = "g",
           },
           {
-            action = "lua LazyVim.pick.config_files()()",
+            action = function()
+              vim.api.nvim_input("<cmd>Telescope chezmoi find_files<cr>")
+            end,
             desc = " Config",
             icon = " ",
             key = "c",
