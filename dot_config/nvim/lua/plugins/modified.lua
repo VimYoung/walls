@@ -179,6 +179,19 @@ return {
     opts = {
       -- autoformat = false,
       inlay_hints = { enabled = false },
+      diagnostics = {
+        float = {
+          border = "rounded",
+        },
+      },
+    },
+  },
+  {
+    "folke/noice.nvim",
+    opts = {
+      presets = {
+        lsp_doc_border = true,
+      },
     },
   },
 }
