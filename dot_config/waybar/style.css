@@ -1,15 +1,99 @@
-@import "./rose-pine.css";
 
 * {
-   /*reference the color by using @color-name */
-  background: @base;
-  border: 1px solid @overlay;
+	font-size: 18px;
+	font-family: "Bitstrom Wera Nerd Font", monospace;
 }
 
+window#waybar {
+	background: #292b2e;
+	color: #ececec;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+	font-size: 20px;
+	color: #1a1a1a;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+	font-size: 20px;
+	color: #292b2e;
+	background: #1a1a1a;
+}
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#backlight,
+#window,
+#tray {
+	background: #1a1a1a;
+}
+
+#workspaces button {
+	margin: 0px 4px 0px 0px;
+	padding: 0px 8px 0px 3px;
+	color: #fdf6e3;
+	border: 1px solid #fdf6e3;
+}
+
+#workspaces button.empty {
+	color: #999999;
+}
+
+#workspaces button.active {
+	color: #9525ff;
+	border: 1px solid #9525ff;
+}
+
+#workspaces button:hover {
+	border: 1px solid #9525ff;
+	color: #9525ff;
+}
+
+#pulseaudio {
+	color: #268bd2;
+}
 #memory {
-  color: @foam;
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #46b40e;
+}
+#backlight {
+	color: #ffd966;
+}
+#disk {
+	color: #b58900;
 }
 
-#temperature {
-  color: @rose;
+#window {
+	padding: 0 10px;
+	color: #9525ff;
+}
+
+window#waybar.empty #window{
+	min-width: 20px;
+}
+
+#tray {
+	padding: 0 8px;
+}
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#backlight,
+#disk {
+	padding: 0 10px;
 }
