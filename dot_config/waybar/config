@@ -1,0 +1,18 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio"],
+
+  // Adjust modules as needed
+  "hyprland/workspaces": {
+    "disable-scroll": false
+  },
+  "clock": {
+    "format": "%a %d %b, %H:%M"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%"
+  }
+}

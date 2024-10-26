@@ -1,0 +1,26 @@
+# BEGIN_KITTY_THEME
+# Rosé Pine
+include current-theme.conf
+# END_KITTY_THEME
+
+hide_window_decorations yes
+enabled_layouts tall
+
+map ctrl+[ layout_action decrease_num_full_size_windows
+map ctrl+] layout_action increase_num_full_size_windows
+map ctrl+/ layout_action mirror toggle
+map ctrl+y layout_action mirror true
+map ctrl+n layout_action mirror false
+
+map ctrl+. layout_action bias 50 62 70
+map ctrl+, layout_action bias 62
+
+font_size 14.0
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="Iosevka Term"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
