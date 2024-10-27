@@ -12,6 +12,7 @@ return {
           background = true,
         },
         contrast = {
+          -- If the background is set to transparent,
           terminal = false, -- Enable contrast for the built-in terminal
           sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
           floating_windows = false, -- Enable contrast for floating windows
