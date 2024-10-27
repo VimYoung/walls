@@ -87,8 +87,16 @@ return {
       local cmp = require("cmp")
 
       opts.window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = {
+          border = "rounded",
+          winhighlight = "Normal:MyHighlight",
+          winblend = 0,
+        },
+        documentation = {
+          border = "rounded",
+          winhighlight = "Normal:MyHighlight",
+          winblend = 0,
+        },
       }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
@@ -282,5 +290,13 @@ return {
         },
       }
     end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ui = {
+        border = "rounded",
+      },
+    },
   },
 }
