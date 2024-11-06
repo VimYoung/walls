@@ -15,12 +15,13 @@ vim.opt.listchars = {
   -- precedes = "◢",
   nbsp = "○",
 }
+vim.opt.timeoutlen = 1000 -- Changed LazyVim default as whichkey not used.
 --LSP settings
 vim.lsp.inlay_hint.enable(false) -- Disable inline diagnostics.
 -- Setting to activarte deep-ocean material theme.
 vim.g.material_style = "deep ocean" --Setting desired style
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions" --for auto-session.
-
+vim.o.sessionoptions =
+  "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals,skiprtp,folds" --for auto-session.
 --Inserting configuration for terminal mode
 -- Auto command to enter terminal mode when entering a terminal buffer
 function _G.check_terminal()

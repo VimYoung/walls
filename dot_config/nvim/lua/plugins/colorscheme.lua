@@ -17,9 +17,10 @@ return {
           sidebars = true, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
           floating_windows = false, -- Enable contrast for floating windows
           cursor_line = true, -- Enable darker background for the cursor line
-          lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
+          --lsp_virtual_text = true, -- Enable contrasted background for lsp virtual text
           non_current_windows = true, -- Enable contrasted background for non-current windows
         },
+        lualine_style = "stealth",
       })
     end,
   },

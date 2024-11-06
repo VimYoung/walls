@@ -152,4 +152,10 @@ return {
       })
     end,
   },
+  -- this plugin is useful when background is disabled.
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinLeave" },
+  },
 }
