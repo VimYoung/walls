@@ -1,0 +1,14 @@
+README.md
+
+.config/nvim.bak/plugged
+.config/nvim.bak/plugged/**
+# .config/lazygit/state.yml
+.config/nvim/lua/plugins/extras/lang/pylance.lua
+#.config/wezterm/images/**
+#.config/tmux/plugins/**
+
+# Ranger related
+.config/ranger/__pycache__/
+.config/ranger/__pycache__/**
+.config/ranger/plugins
+.config/ranger/plugins/**
