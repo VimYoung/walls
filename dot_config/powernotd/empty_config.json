@@ -7,7 +7,7 @@
       "message": "The battery is {}%, connect with tesseract."
     },
     {
-      "level": 5,
+      "level": 10,
       "urgency": "Critical",
       "time_secs": 10,
       "title": "Critical Battery Status",
