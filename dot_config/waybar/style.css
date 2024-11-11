@@ -1,0 +1,104 @@
+@import "./rose-pine.css";
+* {
+	font-size: 18px;
+	font-family: "Iosevka Extended", "Iosevka";
+}
+
+window#waybar {
+	background: @base;/*#292b2e; */
+	color: #ececec;
+  /* border-bottom: 1px solid #181825; */
+  /* border-radius: 50px; */
+  /* transition-property: background-color; */
+  /* color: @base; */
+}
+
+/* #custom-right-arrow-dark, */
+/* #custom-left-arrow-dark { */
+/* 	font-size: 20px; */
+/* 	color: @base; */
+/* } */
+/* #custom-right-arrow-light, */
+/* #custom-left-arrow-light { */
+/* 	font-size: 20px; */
+/* 	color: #292b2e; */
+/* 	background: @base; */
+/* } */
+
+#workspaces,
+#clock.1,
+#clock.2,
+#clock.3,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#backlight,
+#window,
+#tray {
+	background: @base;
+}
+
+#workspaces button {
+	margin: 4px 4px 4px 4px;
+	padding: 0px 0px 0px 0px;
+	color: #fdf6e3;
+	/* border: 1px solid #fdf6e3; */
+
+}
+
+#workspaces button.empty {
+	color: #999999;
+}
+
+#workspaces button.active {
+	color: #9525ff;
+	/* border: 1px solid #9525ff; */
+}
+
+#workspaces button:hover {
+	border: 1px solid #9525ff;
+	color: #9525ff;
+}
+
+#pulseaudio {
+	color: #268bd2;
+}
+#memory {
+	color: #2aa198;
+}
+#cpu {
+	color: #6c71c4;
+}
+#battery {
+	color: #46b40e;
+}
+#backlight {
+	color: #ffd966;
+}
+#disk {
+	color: #b58900;
+}
+
+#window {
+	padding: 0 10px;
+	color: #9525ff;
+}
+
+window#waybar.empty #window{
+	min-width: 20px;
+}
+
+#tray {
+	padding: 0 8px;
+}
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#backlight,
+#disk {
+	padding: 0 10px;
+}

@@ -1,0 +1,30 @@
+{
+  "notifications": [
+    {
+      "level": 20,
+      "urgency": "Low",
+      "title": "Battery Low",
+      "message": "The battery is {}%, connect with tesseract."
+    },
+    {
+      "level": 5,
+      "urgency": "Critical",
+      "time_secs": 10,
+      "title": "Critical Battery Status",
+      "message": "Your power is below {}%, the system is about to shut down."
+    },
+    {
+      "level": 26,
+      "urgency": "Low",
+      "time_secs": 10,
+      "title": "Test notification.",
+      "message": "This is a drill notification for checking, {}% battery left."
+    }
+  ],
+  "full_notification": {
+    "urgency": "Low",
+    "enabled": true,
+    "title": "Battery Status",
+    "message": "Fully Charged 100%"
+  }
+}
