@@ -1,0 +1,30 @@
+{
+  "notifications": [
+    {
+      "level": 21,
+      "urgency": "Critical",
+      "title": "Battery Low",
+      "message": "The battery is {}%, connect the arc reactor."
+    },
+    {
+      "level": 11,
+      "urgency": "Critical",
+      "time_secs": 10,
+      "title": "Critical Battery Status",
+      "message": "Your power is below {}%, the system is about to shut down."
+    },
+    {
+      "level": 26,
+      "urgency": "Normal",
+      "time_secs": 10,
+      "title": "Test notification.",
+      "message": "{}% battery left, Prepare the tesseract."
+    }
+  ],
+  "full_notification": {
+    "urgency": "Low",
+    "enabled": true,
+    "title": "Battery Status",
+    "message": "Fully Charged 100%"
+  }
+}

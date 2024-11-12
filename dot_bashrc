@@ -50,4 +50,4 @@ export PATH=$BUN_INSTALL/bin:$PATH
 eval "$(zoxide init bash)"
 
 #Adding eww in PATH
-export PATH="$HOME/eww/target/release/:$PATH"
+# export PATH="$HOME/eww/target/release/:$PATH"
