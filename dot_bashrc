@@ -51,3 +51,6 @@ eval "$(zoxide init bash)"
 
 #Adding eww in PATH
 # export PATH="$HOME/eww/target/release/:$PATH"
+
+export LUA_PATH="/home/bhaumik/.luarocks/share/lua/5.3/?.lua;/home/bhaumik/.luarocks/share/lua/5.3/?/init.lua;;"
+export LUA_CPATH="/home/bhaumik/.luarocks/lib/lua/5.3/?.so;;"
