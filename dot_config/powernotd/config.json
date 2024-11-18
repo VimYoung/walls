@@ -1,20 +1,20 @@
 {
   "notifications": [
     {
-      "level": 21,
+      "level": 10,
       "urgency": "Critical",
       "title": "Battery Low",
       "message": "The battery is {}%, connect the arc reactor."
     },
     {
-      "level": 11,
+      "level": 5,
       "urgency": "Critical",
       "time_secs": 10,
       "title": "Critical Battery Status",
       "message": "Your power is below {}%, the system is about to shut down."
     },
     {
-      "level": 26,
+      "level": 20,
       "urgency": "Normal",
       "time_secs": 10,
       "title": "Test notification.",
