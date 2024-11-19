@@ -42,19 +42,14 @@ local function ButtonDropdown()
 end
 
 local function SyshelloTray()
-	local tray = Tray.get_default()
-
+	local values = { 1, 2 }
 	return Widget.Box({
-		bind(tray, "items"):as(function(items)
+		bind(values, "items"):as(function(items)
 			return map(items, function(item)
-				if item.icon_theme_path ~= nil then
-					App:add_icons(item.icon_theme_path)
-				end
-
+				print(item)
 				local menu = item:create_menu()
-
 				return Widget.Button({
-					tooltip_markup = bind(item, "tooltip_markup"),
+					label = "Hellooo",
 					on_destroy = function()
 						if menu ~= nil then
 							menu:destroy()
@@ -106,30 +101,6 @@ local function SysTray()
 		end),
 	})
 end
-
--- -- Get the button's position
--- local x, y = ButtonDropdown().get_position()
--- local height = ButtonDropdown():get_height()
--- print(x)
--- print(y)
--- print(height)
--- Position the new window just below the button
--- return function(monitor)
--- 	local WindowAnchor = astal.require("Astal", "3.0").WindowAnchor
--- 	return Widget.Window({
--- 		class_name = "Bar",
--- 		gdkmonitor = monitor,
--- 		anchor = WindowAnchor.TOP + WindowAnchor.LEFT + WindowAnchor.RIGHT,
--- 		exclusivity = "EXCLUSIVE",
--- 		Widget.CenterBox({
--- 			Widget.Box({
--- 				BatteryLevel(),
--- 				ButtonDropdown(),
--- 				SysTray(),
--- 			}),
--- 		}),
--- 	})
--- end
 
 return function(gdkmonitor)
 	local WindowAnchor = astal.require("Astal", "3.0").WindowAnchor
