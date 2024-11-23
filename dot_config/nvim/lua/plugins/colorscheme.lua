@@ -3,6 +3,13 @@ return {
     "marko-cerovac/material.nvim",
     config = function()
       require("material").setup({
+        -- Adding custom_highlights as border color was not visible for transparent background in deep ocean.
+        custom_highlights = {
+          -- Added an empty string for FloatBorder to use defualt values instead
+          -- black borders which are the default by doesn't fit with transparent background
+          -- and dark ocean theme.
+          FloatBorder = {},
+        },
         plugins = {
           "gitsigns",
           "indent-blankline",
