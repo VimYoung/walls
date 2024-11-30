@@ -1,0 +1,30 @@
+* { all: unset; }
+
+.symbol {
+  color: #e0def4;
+  font-size: 6em;
+}
+.text {
+  color: #e0def4;
+  font-size: 2em;
+}
+
+.buttonss {
+  border-radius: 1.5em;
+  background: rgba(#191724, 1);
+  // border: 3px #eb6f92;
+  // border-color: #eb6f92;
+  // Border {
+  //   border-width: 1;
+  // }
+  &:hover {
+      transition: 200ms linear;
+      // border-color: #e0def4;
+      background-color: rgba(#1f1d2e, 1);
+    }
+}
+
+.layout-box {
+  background: rgba(#191724, 0.4);
+}
+

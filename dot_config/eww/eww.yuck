@@ -1,7 +1,70 @@
+(defwindow screenshot
+  :monitor 0
+  :stacking "fg"
+  :windowtype "normal"
+  :wm-ignore true
+  :geometry (geometry :focusable false
+              :width "60%"
+              :height "25%"
+              :anchor "center")
+  (screenshotoptions))
+
+(defwidget screenshotoptions []
+  (box :orientation "h"
+    :space-evenly true
+    ; :class "layout-box"
+    :valign "fill"
+    :halign "fill"
+    ; :width 700
+    ; :height 210
+    :spacing 20
+    (button :class "buttonss"
+      :onclick "eww close screenshot && eww close screenshot-closer && hyprshot -m region -o ~/Pictures/Screenshots/"
+      (box :orientation "v"
+        :space-evenly false
+        :valign "center"
+        :spacing 0
+        (label :text ""
+          :class "symbol")
+        (label :text "Selection"
+          :class "text")))
+    (button :class "buttonss"
+      :onclick "eww close screenshot && eww close screenshot-closer && hyprshot -m output -o ~/Pictures/Screenshots/"
+      (box :orientation "v"
+        :space-evenly false
+        :valign "center"
+        :spacing 0
+        (label :text "󰆟"
+          :class "symbol")
+        (label :text "Fullscreen"
+          :class "text")))
+    (button :class "buttonss"
+      :onclick "eww close screenshot && eww close screenshot-closer && hyprshot -m window -o ~/Pictures/Screenshots/"
+      (box :orientation "v"
+        :space-evenly false
+        :valign "center"
+        :spacing 0
+        (label :text ""
+          :class "symbol")
+        (label :text "Window"
+          :class "text")))))
+
+(defwindow screenshot-closer
+  :monitor 0
+  :geometry (geometry :width "100%" :height "100%")
+  :stacking "fg"
+  :focusable false
+  (closer :window "screenshot"))
+ 
+(defwidget closer [window]
+  (box :class "layout-box"
+    (eventbox :onclick "eww close ${window} && eww close ${window}-closer")))
+
+;
 ; (defwindow example
 ;            :monitor 0
 ;            :geometry (geometry :x "0%"
-;                                :y "20px"
+;                                :y "30px"
 ;                                :width "90%"
 ;                                :height "30px"
 ;                                :anchor "top center")
@@ -9,20 +72,137 @@
 ;            :reserve (struts :distance "40px" :side "top")
 ;            :windowtype "dock"
 ;            :wm-ignore false
-;            :wm-ignore
 ;   "example content")
-(defwindow powermenu
-  :monitor 0
-  :stacking "fg"
-  :windowtype "normal"
-  :wm-ignore true
-  :geometry (geometry
-              :width "50%"
-              :height "50%")
-  (powermenu_layout)) 
-
-(defwidget powermenu_layout []
-  (label :text "${time.hour} :: ${time.min}"))
-(defpoll time :interval "5s"
-  `date +'{"hour":"%H","min":"%M"}'`)
-
+;
+;
+;
+; (defwindow powermenu
+;   :monitor 0
+;   :stacking "fg"
+;   :windowtype "normal"
+;   :wm-ignore true
+;   :geometry (geometry :width "100%" :height "100%")
+;   (powermenu_layout))
+;
+; (defpoll time :interval "5s"
+;   :initial `date +'{"hour":"%H","min":"%M"}'`
+;   `date +'{"hour":"%H","min":"%M"}'`)
+; (defpoll net :interval "100s"
+;   :initial `N/A`
+;   `nmcli -t -f SIGNAL,ACTIVE device wifi \
+;     | awk -F':' '{if($2=="yes")print$1}'`)
+;
+; (defwidget powermenu_layout []
+;   (box :class "layout-box" :space-evenly false :orientation "vertical"
+;        :style "background-image: url('./wallpaper')"
+;     (box :valign "start" :space-evenly false :spacing 25
+;       (_sundial)
+;       (_battery :status {EWW_BATTERY.BAT0.status}
+;                 :battery {EWW_BATTERY.BAT0.capacity}
+;                 :charge "" :one "" :two "" :three "" :four ""
+;                 :five "" :six "" :seven "")
+;       (_network :strength net :offline "" :excellent "" :good ""
+;                 :okay "" :slow "")
+;       (label :text "|" :class "sep")
+;       (button :onclick "eww close powermenu" :class "close-btn" ""))
+;     (box :space-evenly false :hexpand true :vexpand true
+;       (box :spacing 15 :class "tm-box" :space-evenly false
+;             :valign "end" :halign "start"
+;         (label :text "")
+;         (label :text "${time.hour}  ${time.min}"))
+;       (_buttons :shutdown "poweroff" :reboot "reboot"
+;                 :logout "loginctl kill-session self"
+;                 :shutdown_icon "" :reboot_icon ""
+;                 :logout_icon ""))))
+;
+; (defwidget _battery [battery status one two three
+;                     four five six seven charge]
+;   (box :class "bat-box" :space-evenly false :spacing 8
+;     (label :text {status == 'Charging' ? charge :
+;       battery < 15 ? seven :
+;         battery < 30 ? six :
+;           battery < 45 ? five :
+;             battery < 60 ? four :
+;               battery < 75 ? three :
+;                 battery < 95 ? two : one})))
+;
+; (defwidget _network [strength offline excellent
+;                     good okay slow]
+;   (box :class "net-box"
+;        :space-evenly false
+;        :spacing 8
+;     (label :text {strength == "" ? offline :
+;       strength < 26 ? slow :
+;         strength < 51 ? okay :
+;           strength < 76 ? good : excellent})))
+;
+; (defwidget _buttons [shutdown shutdown_icon reboot
+;                     reboot_icon logout logout_icon]
+;   (box :class "btns-box" :spacing 5
+;        :vexpand true :hexpand true
+;        :valign "end" :halign "end"
+;        :space-evenly false
+;     (button :onclick shutdown shutdown_icon)
+;     (button :onclick reboot reboot_icon)
+;     (button :onclick logout logout_icon)))
+;
+; (defwidget _sundial []
+;   (label :class "sundial-lbl" :halign "end" :hexpand true
+;          :text {time.hour >= 2 && time.hour <= 4 ? "Early Morning" :
+;                time.hour <= 5 ? "Dawn" :
+;                time.hour >= 6
+;                 && (time.hour <= 8 && time.min <= 59)
+;                   ? "Morning" :
+;                time.hour >= 9
+;                  && (time.hour <= 11 && time.min <= 59)
+;                    ? "Late Morning" :
+;                time.hour == 12 && time.min <= 29
+;                  ? "Midday" :
+;                time.hour >= 12 && time.hour <= 16
+;                  ? "Afternoon" :
+;                time.hour > 16 && time.hour <= 17
+;                  ? "Late Afternoon" :
+;                (time.hour >= 17 && time.min <= 1)
+;                  || (time.hour <= 18 && time.min <= 20)
+;                    ? "Early Evening" :
+;                time.hour >= 18 && time.hour <= 19
+;                  ? "Dusk" :
+;                time.hour > 19 && time.hour <= 21
+;                  ? "Late Evening" :
+;                time.hour > 21 ? "Night" : "Midnight"}))
+; ;; vim:ft=yuck
+; (defwindow hello
+;   ;; :orientation "v" means the same
+;   :monitor 0
+;   :stacking "fg"
+;   :windowtype "normal"
+;  (box :orientation "vertical" :class "bx"
+;    (label :text "This is a label.")
+;    (button :class "btn"
+;      (label
+;        :text "This is a label nested inside of a button."))
+;    "This is also a label."
+;    ;; no orientation means horizontal
+;    (box :class "nst-bx"
+;      (label :text "Hello" :limit-width 4)
+;      (button :onclick "notify-send Left"
+;        :onmiddleclick "notify-send Middle"
+;        "Hello"))))
+;
+; (defvar left 0)
+; (defvar mid 0)
+; (defvar right 0)
+; (defwindow example
+;   :monitor 0
+;   :focusable true
+;   :geometry (geometry
+;     :width "100%"
+;     :height "30px"
+;     :anchor "center"
+;   )
+;   (button
+;     :onclick "eww update left=${left+1}"
+;     :onmiddleclick "eww update mid=${mid+1}"
+;     :onrightclick "eww update right=${right+1}; eww close example"
+;     "l: ${left}, m: ${mid}, r: ${right}"
+;   ))
