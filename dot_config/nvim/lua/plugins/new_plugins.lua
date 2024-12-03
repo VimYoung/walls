@@ -372,4 +372,5 @@ return {
   {
     "elkowar/yuck.vim",
   },
+  { "Kolkhis/streamer-mode.nvim" },
 }

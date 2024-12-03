@@ -38,3 +38,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
     vim.opt_local.relativenumber = false
   end,
 })
+local hardmode = true
+if hardmode then
+  -- Show an error message if a disabled key is pressed
+  local msg = [[<cmd>echohl Error | echo "KEY DISABLED" | echohl None<CR>]]
+
+  -- Disable arrow keys in insert mode with a styled message
+  vim.api.nvim_set_keymap("i", "<Up>", "<C-o>" .. msg, { noremap = true, silent = false })
+  -- [ ... ] (rest of the code remains same)
+end
