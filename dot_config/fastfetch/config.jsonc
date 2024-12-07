@@ -1,0 +1,69 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "padding": {
+            "top": 5
+        },
+        "type": "small",
+        "color": {"1": "magenta",
+                  "2": "red"}
+        },
+    "display":{
+        "color": {
+                  "keys": "magenta",
+                  "value":"blue",
+                  "output":"cyan",
+                  "separator": "red"
+                },
+    },
+    "modules": [
+        // {
+        //   "type": "logo",
+        //   "source": "fedora",
+        // },
+        "title",
+        //"separator",
+        {
+          "type": "custom",
+          "format": "┌────────────────────────────────────────────────────────────────────┐" // `\u001b` is `\033`, or `\e`
+        },
+        "break",
+        "os",
+        "wm",
+        {
+            "type": "wmtheme",
+            "key": "WM theme",
+            "format": "Rosé Pine"
+        },
+        {
+            "type": "host",
+            "format": "{/2}{-}{/}{2}{?3} {3}{?}"
+        },
+        "kernel",
+        "uptime",
+        {
+            "type": "battery",
+            "format": "{/4}{-}{/}{4}{?5} [{5}]{?}"
+        },
+        "break",
+        "packages",
+        "shell",
+        //"display",
+        "terminal",
+        "terminalfont",
+        "break",
+        // "cpu",
+        // {
+        //     "type": "gpu",
+        //     "key": "GPU"
+        // },
+        "memory",
+        "break",
+        "icons",
+        // "colors",
+        {
+          "type": "custom",
+          "format": "└────────────────────────────────────────────────────────────────────┘" // `\u001b` is `\033`, or `\e`
+        },
+    ]
+}
