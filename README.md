@@ -12,4 +12,6 @@ improvements are welcomed. Feel free to open an issue.
 
 These are my wallpapers which I use, though they are part of my chezmoi dotfiles but I thought to 
 separate out some images I like.
+
+Added few lines but have to add aproper description.
 yeeeeeee! this is my wallpaper branch.
