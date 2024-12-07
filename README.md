@@ -50,6 +50,4 @@ TOOLS_LIST.md. Some comman utilites are as following.
 - APPLAUNCHER:- ROFI
 
 
-
-
 yeeeeeee! this is my wallpaper branch.
